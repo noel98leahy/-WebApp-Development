@@ -1,9 +1,14 @@
 import React, { useState, useEffect } from "react";
 import PageTemplate from "../components/templateMovieListPage";
 import { getMovieUpcoming } from "../api/tmdb-api";
+import Spinner from '../components/spinner'
 
 const UpcomingMoviePage = (props) => {
   const [movies, setMovies] = useState([]);
+
+  if (isLoading) {
+    return <Spinner />;
+  }
    
   const favorites = movies.filter(m => m.favorite)
   localStorage.setItem('favorites', JSON.stringify(favorites))
