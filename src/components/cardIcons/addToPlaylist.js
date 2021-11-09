@@ -7,12 +7,9 @@ const AddToPlaylistIcon = ({movie}) => {
 
     const context = useContext(MoviesContext);
 
-    const handleAddToFavorites = (e) => {
-      e.preventDefault();
-      context.addToFavorites(movie);
-    };
+    
     return (
-      <IconButton aria-label="add to favorites" onClick={handleAddToFavorites}>
+      <IconButton aria-label="add to favorites">
         <PlayListAddIcon color="primary" fontSize="large" />
       </IconButton>
     );
